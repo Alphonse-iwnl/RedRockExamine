@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="RedRockPlayer.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RedRockPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="LightBlue" Margin=" 0,0,0,-80" BorderThickness="0">
+            <TextBlock  Text="发现音乐" Margin="5,20,0,10" Foreground="Gray" FontFamily="YouYuan"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBox Name="SearchBox" Height="20" Margin="10,10,70,30" IsEnabled="True" PlaceholderText="What Do You Want?" />
+        <Button 
+            HorizontalAlignment="Right" IsEnabled="True"
+            Margin="0,0,20,20"  
+            Background="Transparent" BorderThickness="0" 
+            VerticalAlignment="Center" 
+            FontFamily="Segoe MDL2 Assets" 
+            FontSize="25" Content="&#xE71E;"
+            Click="Button_Click"/>
+        </Grid>
+        <ListView Name="SearchList" Grid.Row="2" IsItemClickEnabled="True" ItemClick="SearchList_ItemClick">
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <Grid>
+                        <Grid Margin="0,5,0,5" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                                    VerticalAlignment="Center"
+                                    Name="SongsId" 
+                                    Text="{Binding id}"
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Center"
+                                    FontFamily="YouYuan"
+                                    FontSize="15"/>
+                            <Image 
+                                    Name="SongsImg" 
+                                    Height="50" 
+                                    Width="50" 
+                                    Source="{Binding albumpic_small}" 
+                                    Margin="10,0,0,0" 
+                                    Grid.Column="1" />
+                            <TextBlock 
+                                     FontFamily="YouYuan"
+                                    VerticalAlignment="Center"
+                                    Name="SongsName" Text="{Binding songname}" Tag="{Binding tag,Mode=OneWay}"
+                                    RelativePanel.RightOf="SongsImg" TextTrimming="WordEllipsis"
+                                    Margin="10,0,0,0" HorizontalAlignment="Left" FontSize="15"
+                                    Grid.Column="2"/>
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding ElementName=SongsName,Path=Tag,Mode=TwoWay}" Grid.Column="4" Margin="10">
+                                <Button Name="downloadButton" 
+                                                     Click="downloadButton_Click" 
+                                                    HorizontalAlignment="Right"
+                                                    RelativePanel.LeftOf="SingerName"                                                     
+                                                    Background="White"                                                     
+                                                    Content="&#xE0A5;"
+                                                    FontFamily="Segoe MDL2 Assets"/>
+                                <Button Name="playButton" 
+                                                    Click="playButton_Click"
+                                                    RelativePanel.LeftOf="SingerName" 
+                                                    HorizontalAlignment="Right" 
+                                                    Background="White" 
+                                                    Content="&#xE896;"                                                   
+                                                    FontFamily="Segoe MDL2 Assets"/>
+                            </StackPanel>
+                            <TextBlock 
+                                    FontFamily="YouYuan"
+                                    Name="SingerName" 
+                                    TextTrimming="WordEllipsis"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding singername}" 
+                                    RelativePanel.RightOf="SongsName" 
+                                    Margin="0,0,10,0"
+                                    Grid.Column="3"/>
+                        </Grid>
+                        <Line X1="0" X2="750" Y1="0" Y2="1" Height="1" VerticalAlignment="Bottom" Stroke="#E6E6E6" StrokeThickness="1"></Line>
+                        <Line X1="0" X2="750" Y1="1" Y2="0" Height="1" VerticalAlignment="Bottom" Stroke="#E6E6E6" StrokeThickness="1"></Line>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

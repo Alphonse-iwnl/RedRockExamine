@@ -1,0 +1,26 @@
+﻿<Application
+    x:Class="RedRockPlayer.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RedRockPlayer"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <ImageBrush x:Key="HubBackgroundImageBrush" ImageSource="Assets/lastSong.png"/>
+                    <ImageBrush x:Key="HubBackgroundImageBrush1" ImageSource="Assets/play.png"/>
+                    <ImageBrush x:Key="HubBackgroundImageBrush2" ImageSource="Assets/nextSong.png"/>
+                    <ImageBrush x:Key="HubBackgroundImageBrush3" ImageSource="Assets/stop.png"/>
+                    <ImageBrush x:Key="HubBackgroundImageBrush4" ImageSource="Assets/MySongs.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush5" ImageSource="Assets/sounds.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush6" ImageSource="Assets/inLinePlay.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush7" ImageSource="Assets/radomPlay.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush8" ImageSource="Assets/soloPlay.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush9" ImageSource="Assets/liebiaoxunhuan.png" />
+                    <ImageBrush x:Key="HubBackgroundImageBrush10" ImageSource="Assets/backgroundPic.jpg" Stretch="UniformToFill"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
