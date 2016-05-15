@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\backgroundPic.jpg" />
+    <Content Include="Assets\comparer.jpg" />
     <Content Include="Assets\inLinePlay.png" />
     <Content Include="Assets\lastSong.png" />
     <Content Include="Assets\liebiaoxunhuan.png" />
